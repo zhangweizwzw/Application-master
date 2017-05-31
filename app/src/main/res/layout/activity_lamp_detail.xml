@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/large_lina"
+    tools:context="com.yt.wia.application.LampDetailActivity">
+
+    <LinearLayout android:id="@+id/small_lina"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="60dp"
+        android:layout_marginTop="150dp"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <!--集中器-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="1dp"
+            android:background="@color/lmasss_color"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="集中器信息"
+                android:textColor="#87CEEB"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+        <!--集中器第一行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:focusable="true"
+                android:focusableInTouchMode="true">
+
+                <TextView
+                    android:id="@+id/jname_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jname"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jname"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="5dp"
+                    android:background="@drawable/edittext"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/jaddress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jaddress"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jaddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/jphone_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jphone"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jphone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--集中器第二行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/jweidu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jweidu"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jweidu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/jjingdu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jjingdu"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jjingdu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/jstatus_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/jstatus"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/jstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+        <!--灯控器-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/clamp_color"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="灯控器信息"
+                android:textColor="#FFEC8B"
+                android:textSize="@dimen/text_size_large" />
+        </LinearLayout>
+
+
+        <!--灯控器信息第一行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lname_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/llname"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lname"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lhuilu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lhuilu"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lhuilu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lw_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lw"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lw"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--灯控器信息第二行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/ltemp_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ltemp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/ltemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/llight_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/llight"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/llight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lmac_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mac"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lmac"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--灯控器信息第三行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lid_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lid"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lid"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/ltype_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ltype"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/ltype"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lstatus_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lstatus"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lstatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--灯控器信息第四行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lv_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/la_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ltype"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/la"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lweidu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lweidu"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lweidu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--灯控器信息第五行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lcharge_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lcharge"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lcharge"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/lwyin_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lwyin"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/lwyin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/ljigndu_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ljingdu"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <EditText
+                    android:id="@+id/ljigndu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/edittext"
+                    android:paddingLeft="5dp"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

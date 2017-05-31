@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/largerela"
+    tools:context="com.yt.wia.application.ChartWebviewActivity">
+
+    <include android:id="@+id/title_bar"
+        layout="@layout/title_bar"/>
+
+    <RelativeLayout android:id="@+id/smallrela"
+        android:background="@color/white"
+        android:layout_centerInParent="true"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="10dp"
+        android:layout_width="750dp"
+        android:layout_height="500dp">
+
+        <com.yt.wia.view.WebViewMod
+            android:id="@+id/webview"
+            android:layout_width="750dp"
+            android:layout_height="500dp" />
+
+        <ImageView android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@mipmap/close"/>
+    </RelativeLayout>
+
+</RelativeLayout>

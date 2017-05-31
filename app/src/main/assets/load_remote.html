@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>三维</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <link rel="stylesheet" 
+    href="http://192.168.1.103:8080/arcgis_js_v40_api/arcgis_js_api/library/4.0/4.0/dijit/themes/claro/claro.css" />
+  <link rel="stylesheet" 
+    href="http://192.168.1.103:8080/arcgis_js_v40_api/arcgis_js_api/library/4.0/4.0/esri/css/main.css" />  
+  <script src="http://192.168.1.103:8080/arcgis_js_v40_api/arcgis_js_api/library/4.0/4.0/init.js"></script>  
+
+
+   <style type="text/css">
+  	html, body, #arcgisMap {
+	    padding: 0;
+	    margin: 0;
+	    height: 100%;
+	    width: 100%;
+  	}
+
+    #buttonsDiv {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      padding: 12px;
+      background-color: rgba(200, 200, 200, 0);
+      /*border: 1px solid black;*/
+    }
+
+
+
+  </style>	
+  <script type="text/javascript">
+require([
+        "esri/config",//解决跨域的问题
+        "esri/Map",
+        "esri/views/SceneView",
+        "esri/layers/SceneLayer",
+        "esri/layers/FeatureLayer",
+        "esri/geometry/Point",
+
+        "dojo/dom",
+        "dojo/on",
+        "dojo/domReady!"
+      ],
+      function(esriConfig,Map,SceneView,SceneLayer,FeatureLayer,Point,dom,on) {
+
+        var minX = 1.2848108142608002E7;
+        var maxX = 1.307995099172394E7;
+        var minY = 4785250.774898343;
+        var maxY = 5020990.326634219;
+        var spr = 102100;
+        var extentView = {
+              xmin: minX,
+              ymin: minY,
+              xmax: maxX,
+              ymax: maxY,
+              spatialReference: spr
+            };
+
+        var centerX = (minX+maxX)/2.0;
+        var centerY = (minY+maxY)/2.0;    
+        var centerPoint = new Point({
+                spatialReference: spr,
+                x:centerX,
+                y:centerY
+              });
+        
+
+        var map3D = new Map({
+                   basemap: "satellite"
+                  // ground: "world-elevation"
+              });
+        view3d = new SceneView({
+                container: "arcgisMap",
+                map: map3D,
+                viewingMode: "local",
+                clippingArea:extentView,
+                extent:extentView,
+                center:centerPoint,//中心点
+                ui:{components:[ "navigation-toggle", "compass", "zoom"]},
+
+                constraints: {
+                  collision: {enabled: false},
+                  tilt: {max: 200}
+                }
+              });    
+
+
+        var layer = new FeatureLayer({
+            url:"https://192.168.1.104/server/rest/services/北京/MapServer"
+        });
+        var sceneLayer= new SceneLayer({
+            url:"http://192.168.1.104/server/rest/services/Hosted/Bulidings3D/SceneServer"
+        });
+        map3D.add(layer);
+        map3D.add(sceneLayer);
+
+
+        view3d.then(function(){
+          var camera = view3d.camera.clone();
+          //设置查看地下管线的参数信息
+
+          camera.position.x = 12916241.51844617;
+          camera.position.y = 4631944.89077524;
+          camera.position.z = 122270.7593634909;
+          camera.heading=8;
+          camera.tilt=64;
+          //设置范围
+          view3d.camera = camera;    
+
+        },function(){});
+
+
+        // on(toUnderGround, "click", function() {
+        //   alert("ss");
+        // });
+      });
+  </script>
+
+ 
+
+</head>
+<body>
+
+<div id="arcgisMap"></div>
+<!-- <div id="buttonsDiv">
+    <button id="toUnderGround" title="视角">视角</button>    
+</div> -->
+
+</body>
+</html>

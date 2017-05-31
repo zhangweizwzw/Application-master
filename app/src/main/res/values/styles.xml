@@ -1,0 +1,98 @@
+<resources>
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="ActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/action_button_height</item>
+        <item name="android:minWidth">@dimen/action_button_min_width</item>
+        <item name="android:paddingLeft">@dimen/action_button_padding_horizontal</item>
+        <item name="android:paddingRight">@dimen/action_button_padding_horizontal</item>
+        <item name="android:background">@drawable/button</item>
+        <item name="android:textSize">@dimen/action_button_text_size</item>
+    </style>
+
+    <declare-styleable name="SignaturePad">
+        <attr name="penMinWidth" format="dimension" />
+        <attr name="penMaxWidth" format="dimension" />
+        <attr name="penColor" format="color" />
+        <attr name="velocityFilterWeight" format="float" />
+        <attr name="clearOnDoubleClick" format="boolean"/>
+    </declare-styleable>
+
+    <style name="WelcomeStyle" parent="android:Theme">
+        <item name="android:windowBackground">@drawable/welcomebg</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+    <!--主界面的按钮样式-->
+    <style name="MyBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:background">@color/bg</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">45dp</item>
+        <item name="android:paddingRight">45dp</item>
+    </style>
+    <!--商务部的按钮样式-->
+    <style name="BusinessBtn">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:background">@color/bg</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">45dp</item>
+        <item name="android:paddingRight">45dp</item>
+    </style>
+    <!--领导小组按钮空白样式-->
+    <style name="MyBtn0">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">15dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">60dp</item>
+        <item name="android:paddingRight">60dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+    <!--商务部按钮空白样式-->
+    <style name="BusinessBtn0">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:paddingLeft">60dp</item>
+        <item name="android:paddingRight">60dp</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--透明背景-->
+    <style name="Transparent" parent="AppTheme">
+        <item name="android:windowBackground">@color/bantransparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation.Translucent</item>
+    </style>
+
+
+    <!-- 二维地图页面按钮样式-->
+    <style name="twodstyle">
+        <item name="android:layout_width">135dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:background">@color/bg</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_marginRight">10dp</item>
+    </style>
+
+</resources>

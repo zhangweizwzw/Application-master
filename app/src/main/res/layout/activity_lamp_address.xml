@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/large_rela"
+    tools:context="com.yt.wia.application.LampAddressActivity">
+
+
+    <RelativeLayout android:id="@+id/small_rela"
+        android:layout_width="700dp"
+        android:layout_height="500dp"
+        android:background="@color/white"
+        android:layout_centerInParent="true">
+        <com.esri.android.map.MapView
+            android:id="@+id/lampmap"
+            android:layout_margin="5dp"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            mapoptions.ZoomLevel="17"
+            mapoptions.MapType="streets">
+        </com.esri.android.map.MapView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

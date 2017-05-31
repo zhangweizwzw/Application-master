@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <!--<Button-->
+        <!--android:id="@+id/btn01"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="手写签名" />-->
+    <!--<Button-->
+        <!--android:id="@+id/btn02"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="二维码扫描" />-->
+
+    <!--<Button-->
+        <!--android:id="@+id/btn03"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="热修复测试" />-->
+
+    <include
+        layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_business"
+            style="@style/MyBtn"
+            android:drawableLeft="@mipmap/chart"
+            android:text="商务部"
+            />
+        <Button
+            android:id="@+id/btn_leadgroup"
+            style="@style/MyBtn"
+            android:drawableLeft="@mipmap/chart"
+            android:text="领导小组"/>
+        <Button
+            android:id="@+id/btn_twod"
+            style="@style/MyBtn"
+            android:text="2D地图"
+            android:drawableLeft="@mipmap/location"/>
+        <Button
+            android:id="@+id/btn_treed"
+            style="@style/MyBtn"
+            android:text="3D地图"
+            android:drawableLeft="@mipmap/map"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/lamp_btn"
+            style="@style/MyBtn"
+            android:drawableLeft="@mipmap/lamp"
+            android:text="路灯"/>
+        <Button
+        style="@style/MyBtn"
+        android:text="按钮"/>
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp">
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+        <Button
+            style="@style/MyBtn"
+            android:text="按钮"/>
+    </LinearLayout>
+
+</LinearLayout>

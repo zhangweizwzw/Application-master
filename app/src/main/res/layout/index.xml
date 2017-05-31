@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".IndexActivity"
+    android:background="#2aabd2"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    android:gravity="center"
+    android:weightSum="1">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="700dp"
+            android:layout_height="match_parent"
+            android:text="欢迎使用智慧园区移动工作平台"
+            android:layout_marginLeft="6dp"
+            android:textStyle="bold"
+            android:id="@+id/sys_title"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:textColor="#FFFFFF"
+            android:layout_marginBottom="10dp"/>
+    </LinearLayout>
+    <GridView
+        android:id="@+id/index_gridview"
+        android:layout_width="500dp"
+        android:layout_height="130dp"
+        android:paddingTop="50dp"
+        android:visibility="gone"></GridView>
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.15"
+        android:gravity="center"
+        android:background="#ffffff"
+        android:alpha="0.7">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="账号:"
+                android:layout_marginLeft="6dp"
+                android:textStyle="bold"
+                android:id="@+id/account"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:id="@+id/password"
+                android:layout_weight="22.25"
+                android:text="admin"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="密码:"
+                android:layout_marginLeft="6dp"
+                android:textStyle="bold"
+                android:id="@+id/pinView"
+                android:background="#FFFFFF"
+                android:gravity="center"
+                android:textSize="20sp" />
+
+            <EditText
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
+                android:id="@+id/pinCode"
+                android:password="true"
+                android:layout_weight="9.17"
+                android:text="111111"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:weightSum="1"
+            android:layout_marginTop="10dp"
+            android:alpha="1">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:text="登录"
+                android:onClick="onLoginBtnClick"
+                android:textSize="20sp"
+                android:id="@+id/loginBtn"
+                android:background="#5cb85c"
+                android:textColor="#ffffff"
+                android:layout_weight="1.25"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

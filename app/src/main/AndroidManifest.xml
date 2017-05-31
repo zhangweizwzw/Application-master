@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.yt.wia.application">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name="com.yt.wia.extend.MyXutilsApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".WelcomeActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/WelcomeStyle">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".IndexActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_bar_text"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".UpdateActivity"
+            android:label="@string/title_version_update"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".HandWritingActivity"
+            android:label="@string/title_handwriting"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.yt.zxing.activity.CaptureActivity"
+            android:label="@string/title_codescan"
+            android:screenOrientation="landscape"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen" />
+        <activity
+            android:name=".SignatureActivity"
+            android:label="@string/title_signature"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TwoDActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".TreeDActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".BusinessActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LeadGroupActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".ChartActivity"
+            android:label="图表"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".HightNewActivity"
+            android:label="高新技术企业数量"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".UnitAreaActivity"
+            android:label="单位面积情况税收情况"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".FixedFundActivity"
+            android:label="固定资产投资"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".AreaValueFundActivity"
+            android:label="地区生产总值占比"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".RevenueProportionActivity"
+            android:label="税收收入占比"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".HightNewProActivity"
+            android:label="高新技术占比"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".AreaProductionActivity"
+            android:label="地区生产总值"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".ChartWebviewActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".LampActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".LampDetailActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent" />
+
+        <activity android:name=".LampAddressActivity"
+            android:screenOrientation="landscape"
+            android:theme="@style/Transparent"/>
+    </application>
+
+</manifest>

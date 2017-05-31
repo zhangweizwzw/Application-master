@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_business"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yt.wia.application.BusinessActivity">
+
+    <include
+        layout="@layout/title_bar"/>
+
+    <LinearLayout
+        android:id="@+id/lin1"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <Button android:id="@+id/fixedbtn"
+            style="@style/BusinessBtn"
+            android:text="固定资产投资"
+            />
+
+        <Button android:id="@+id/areavaluebtn"
+            style="@style/BusinessBtn"
+            android:text="地区生产总值占比"/>
+
+        <Button android:id="@+id/revenueeprobtn"
+            style="@style/BusinessBtn"
+            android:text="税收收入占比"
+            />
+        <Button android:id="@+id/highnewprobtn"
+            style="@style/BusinessBtn"
+            android:text="高新技术占比"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="horizontal">
+        <Button android:id="@+id/areaproductionbtn"
+            style="@style/BusinessBtn"
+            android:text="地区生产总值"
+            />
+        <Button android:id="@+id/gyzczbtn"
+            style="@style/BusinessBtn"
+            android:text="工业总产值"
+            />
+        <Button android:id="@+id/gmysgyzczbtn"
+            style="@style/BusinessBtn"
+            android:text="规模上工业企业"
+            />
+        <Button android:id="@+id/gxjsqyzczbtn"
+            style="@style/BusinessBtn"
+            android:text="高新技术企业"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        >
+        <Button android:id="@+id/exportbtn"
+            style="@style/BusinessBtn"
+            android:text="出口总额"
+            />
+        <Button android:id="@+id/importbtn"
+            style="@style/BusinessBtn"
+            android:text="进口总额"
+            />
+        <Button android:id="@+id/czsrbtn"
+            style="@style/BusinessBtn"
+            android:text="财政收入"
+            />
+        <Button android:id="@+id/ggczyssrbtn"
+            style="@style/BusinessBtn"
+            android:text="公共财政预算收入"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="20dp">
+        <Button android:id="@+id/sssrbtn"
+            style="@style/BusinessBtn"
+            android:text="税收收入"
+            />
+        <Button android:id="@+id/hyqkbtn"
+            style="@style/BusinessBtn"
+            android:text="行业情况"
+            />
+        <Button
+            style="@style/BusinessBtn0"
+            />
+        <Button
+            style="@style/BusinessBtn0"
+            />
+    </LinearLayout>
+</LinearLayout>

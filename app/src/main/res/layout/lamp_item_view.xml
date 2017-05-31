@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/largeLin"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="9"
+        android:layout_marginLeft="10dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <!-- 第一行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/lid_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="编号："/>
+
+                <TextView android:id="@+id/lid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lid_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/lloop_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="所属回路："/>
+
+                <TextView android:id="@+id/lloop"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lloop_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/lcstatus_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="连接状态："/>
+
+                <TextView android:id="@+id/lcstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lcstatus_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+        <!--第二行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/lname_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="名称："/>
+
+                <TextView android:id="@+id/lname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lname_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/laddress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="集中器地址："/>
+
+                <TextView android:id="@+id/laddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/laddress_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/ltype_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="灯源种类："/>
+
+                <TextView android:id="@+id/ltype"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/ltype_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <!--第三行-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/lstatus_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="状态："/>
+
+                <TextView android:id="@+id/lstatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lstatus_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+                <TextView android:id="@+id/lamass_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="集中器名称："/>
+
+                <TextView android:id="@+id/lamass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lamass_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
+                <TextView android:id="@+id/lmac_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large"
+                    android:text="Mac地址："/>
+
+                <TextView android:id="@+id/lmac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_color_default"
+                    android:layout_toRightOf="@+id/lmac_text"
+                    android:layout_marginLeft="2dp"
+                    android:textSize="@dimen/text_size_large"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <Button android:id="@+id/address_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_theme"
+            android:text="位置"/>
+
+        <Button android:id="@+id/onoroff_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/white"
+            android:background="@drawable/button_theme"
+            android:text="开灯"/>
+
+    </LinearLayout>
+
+</LinearLayout>

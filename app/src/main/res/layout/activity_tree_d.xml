@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_tree_d"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yt.wia.application.TreeDActivity">
+
+    <include android:id="@+id/title_bar"
+        layout="@layout/title_bar"/>
+
+    <org.xwalk.core.XWalkView
+        android:id="@+id/xwalk"
+        android:layout_below="@id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </org.xwalk.core.XWalkView>
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <FrameLayout
+        android:id="@+id/writepaddialog_framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@color/white"></FrameLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp">
+        <Button
+            android:id="@+id/writepaddialog_ok"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="BtnOnClick"
+            android:text="确定"/>
+        <Button
+            android:id="@+id/writepaddialog_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="BtnOnClick"
+            android:text="清除"/>
+        <Button
+            android:id="@+id/writepaddialog_canel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="BtnOnClick"
+            android:text="取消"/>
+
+    </LinearLayout>
+</LinearLayout>

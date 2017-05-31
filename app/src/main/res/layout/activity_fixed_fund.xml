@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/largerela"
+    tools:context="com.yt.wia.application.FixedFundActivity">
+
+    <include android:id="@+id/title_bar"
+        layout="@layout/title_bar"/>
+
+    <RelativeLayout android:id="@+id/smallrela"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
+        android:background="@color/white">
+
+        <RelativeLayout
+            android:id="@+id/fixed_relative"
+            android:layout_width="620dp"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/fixed_tv1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:text="开始年份："
+                android:textSize="18dp" />
+
+            <Spinner
+                android:id="@+id/fixed_sp1"
+                android:layout_width="140dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/fixed_tv1"
+                android:entries="@array/years" />
+
+            <TextView
+                android:id="@+id/fixed_tv2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:layout_toRightOf="@+id/fixed_sp1"
+                android:text="结束年份："
+                android:textSize="18dp" />
+
+            <Spinner
+                android:id="@+id/fixed_sp2"
+                android:layout_width="140dp"
+                android:layout_height="30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/fixed_tv2"
+                android:entries="@array/years" />
+
+            <ImageView
+                android:id="@+id/fixed_query"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_toRightOf="@+id/fixed_sp2"
+                android:src="@mipmap/query" />
+
+            <ImageView android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/close"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/linlv"
+            android:layout_width="500dp"
+            android:layout_height="400dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/fixed_relative"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+</RelativeLayout>
