@@ -1,5 +1,6 @@
 package com.yt.wia.application;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -58,12 +60,12 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what==0){
-                getLampList(1,0);
+                getLampList(1,0,amass_name);
                 onLoad();
             }else if(msg.what==1){
                 page++;
                 if(page<=totalPage){
-                    getLampList(page,0);
+                    getLampList(page,0,amass_name);
                     onLoad();
                 }else{
                     ToastUtil.showToast(LampActivity.this,"没有更多内容！");
@@ -118,7 +120,7 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
         });
     }
 
-    private void getLampList(int page,int isShowProcess) {
+    private void getLampList(int page,int isShowProcess,String strname) {
         /**
          * 第一页清空列表
          */
@@ -128,19 +130,19 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
         /**
          * 集中器为全部
          */
-        if(amass_name.equals("全部")){
-            amass_name="";
+        if(strname.equals("全部")){
+            strname="";
         }
 
         String strContr=controller.getText().toString();
-        Log.i(TAG,"集中器="+amass_name);
+        Log.i(TAG,"集中器="+strname);
         Log.i(TAG,"控制器="+strContr);
         Log.i(TAG,"当前page="+page);
 
         LampRequestBean lBean=new LampRequestBean();
         lBean.setPageNo(page+"");
         lBean.setSize("5");
-        lBean.setCntr_cntr_name(amass_name);
+        lBean.setCntr_cntr_name(strname);
         lBean.setLamp_cntr_name(strContr);
 
         Gson gson=new Gson();
@@ -187,7 +189,15 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
                 if(amass_name.isEmpty()){
                     ToastUtil.showToast(this,"请选择集中器名称！");
                 }else{
-                    getLampList(1,1);
+                    getLampList(1,1,amass_name);
+                    /**
+                     * 关闭软键盘
+                     */
+                    View view = getWindow().peekDecorView();
+                    if (view != null) {
+                        InputMethodManager inputmanger = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                        inputmanger.hideSoftInputFromWindow(view.getWindowToken(), 0);
+                    }
                 }
                 break;
         }
@@ -231,7 +241,7 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
         amass_name=controllers[amass.getSelectedIndex()];
         contrs=controllers;
 
-        getLampList(1,1);//获取路灯列表
+        getLampList(1,1,amass_name);//获取路灯列表
     }
 
     @Override
