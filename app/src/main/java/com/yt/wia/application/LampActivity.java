@@ -60,6 +60,7 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
             if(msg.what==0){
+                page=1;
                 getLampList(1,0,amass_name);
                 onLoad();
             }else if(msg.what==1){
@@ -69,6 +70,7 @@ public class LampActivity extends AppCompatActivity implements View.OnClickListe
                     onLoad();
                 }else{
                     ToastUtil.showToast(LampActivity.this,"没有更多内容！");
+                    lamplv.stopLoadMore();
                 }
             }
         }

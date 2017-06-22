@@ -81,61 +81,6 @@ public class WelcomeActivity extends Activity {
         welcomeImg.startAnimation(anima);
         anima.setAnimationListener(new AnimationImpl());
 
-        //下载补丁文件
-//        GoDownloadapatch();
-    }
-
-    private void GoDownloadapatch() {
-        Request request = new Request.Builder().url("http://h-bolin.imwork.net:14572/androiddownloadfile/111.pdf").build();
-        mOkHttpClient.newCall(request).enqueue(new Callback() {
-
-            @Override
-            public void onFailure(Call call, IOException e) {
-
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) throws IOException {
-                InputStream is = null;
-                byte[] buf = new byte[2048];
-                int len = 0;
-                FileOutputStream fos = null;
-                String SDPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-                try {
-                    is = response.body().byteStream();
-                    long total = response.body().contentLength();
-                    File file = new File(SDPath, "test.log");
-                    fos = new FileOutputStream(file);
-                    long sum = 0;
-                    while ((len = is.read(buf)) != -1) {
-                        fos.write(buf, 0, len);
-                        sum += len;
-                        int progress = (int) (sum * 1.0f / total * 100);
-                        Log.d("h_bl", "progress=" + progress);
-                        Message msg = mHandler.obtainMessage();
-                        msg.what = 1;
-                        msg.arg1 = progress;
-                        mHandler.sendMessage(msg);
-                    }
-                    fos.flush();
-                    Log.d("h_bl", "文件下载成功");
-                } catch (Exception e) {
-                    Log.d("h_bl", "文件下载失败");
-                } finally {
-                    try {
-                        if (is != null)
-                            is.close();
-                    } catch (IOException e) {
-                    }
-                    try {
-                        if (fos != null)
-                            fos.close();
-                    } catch (IOException e) {
-                    }
-                }
-            }
-
-        });
     }
 
     private class AnimationImpl implements AnimationListener {

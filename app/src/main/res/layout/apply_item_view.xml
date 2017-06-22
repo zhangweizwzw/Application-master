@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/large_lin">
+    <!-- 第一行 -->
+    <LinearLayout android:id="@+id/lin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/people_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/lxr"/>
+
+            <TextView android:id="@+id/people_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/people_tv"
+                android:textColor="@color/text_color_default"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/company_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/qymc"/>
+
+            <TextView android:id="@+id/company_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:layout_toRightOf="@id/company_name_tv"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/project_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/xmmc"/>
+
+            <TextView android:id="@+id/project_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:layout_toRightOf="@id/project_name_tv"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+    </LinearLayout>
+    <!-- 第二行 -->
+    <LinearLayout android:id="@+id/lin2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@id/lin1"
+        android:layout_margin="10dp">
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/tze_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/tze"/>
+
+            <TextView android:id="@+id/tze"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:layout_toRightOf="@id/tze_tv"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/applytime_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/sqsj"/>
+
+            <TextView android:id="@+id/applytime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:layout_toRightOf="@id/applytime_tv"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+            <TextView android:id="@+id/sqqk_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:textSize="@dimen/text_size_middle"
+                android:text="@string/sqqk"/>
+
+            <TextView android:id="@+id/sqqk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/text_color_default"
+                android:layout_toRightOf="@id/sqqk_tv"
+                android:layout_marginLeft="5dp"
+                android:textSize="@dimen/text_size_middle"/>
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

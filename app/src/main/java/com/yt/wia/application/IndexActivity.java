@@ -167,7 +167,8 @@ public class IndexActivity extends Activity{
             ProcessUtil.showProcess(this,"正在加载，请稍后...");
             OkHttpUtils
                     .post()
-                    .url(SystemSettings.NEWREQUEST_URL+"loginVerify")
+//                    .url(SystemSettings.NEWREQUEST_URL+"loginVerify")
+                    .url("http://192.168.1.101:8080/manager/loginVerify")
                     .addParams("account",password)
                     .addParams("password", pinCode)
                     .build()

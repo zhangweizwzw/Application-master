@@ -19,8 +19,6 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name="com.yt.wia.extend.MyXutilsApplication"
         android:allowBackup="true"
@@ -125,10 +123,15 @@
             android:name=".LampDetailActivity"
             android:screenOrientation="landscape"
             android:theme="@style/Transparent" />
-
-        <activity android:name=".LampAddressActivity"
+        <activity
+            android:name=".LampAddressActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/Transparent"/>
+            android:theme="@style/Transparent" />
+        <activity
+            android:name=".ApplyActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ApplyListActivity" />
+        <activity android:name=".ApplyDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -3,7 +3,6 @@ package com.yt.wia.application;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Environment;
 import android.provider.Settings;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -14,15 +13,17 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.esri.android.map.FeatureLayer;
 import com.esri.android.map.GraphicsLayer;
 import com.esri.android.map.MapView;
 import com.esri.android.map.ags.ArcGISTiledMapServiceLayer;
 import com.esri.core.geodatabase.ShapefileFeatureTable;
+import com.esri.core.geometry.GeometryEngine;
+import com.esri.core.geometry.Line;
 import com.esri.core.geometry.MultiPath;
 import com.esri.core.geometry.Point;
+import com.esri.core.geometry.Polygon;
 import com.esri.core.geometry.Polyline;
 import com.esri.core.map.Graphic;
 import com.esri.core.renderer.Renderer;
@@ -33,20 +34,15 @@ import com.esri.core.symbol.SimpleMarkerSymbol;
 import com.esri.core.symbol.Symbol;
 import com.yt.wia.commons.DownloadUtil;
 import com.yt.wia.config.SystemSettings;
-import com.yt.wia.extend.MyXutilsApplication;
-import com.yt.wia.utils.DateUtils;
 import com.yt.wia.utils.GPSInfoProvider;
 import com.yt.wia.utils.GpsUtil;
 import com.yt.wia.utils.ProcessUtil;
+import com.yt.wia.utils.RangeUtil;
 import com.yt.wia.utils.SdcardUtil;
 import com.yt.wia.utils.StringUtil;
 import com.yt.wia.utils.ToastUtil;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
-import org.xutils.DbManager;
-import org.xutils.ex.DbException;
-import org.xutils.x;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -233,7 +229,7 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
         ProcessUtil.showProcess(this,"正在加载，请稍后...");
         OkHttpUtils
                 .post()
-                .url(SystemSettings.UPLOADREQUEST_URL+"gis/createShp")
+                .url(SystemSettings.NEWREQUEST_URL+"gis/createShp")
                 .addParams("targetName",shapename)
                 .addParams("porints",strpoint)
                 .addParams("wkid", wkid)
@@ -390,61 +386,90 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
      * 定位
      */
     private void contLocation() {
-//        GpsUtil.getLocation(this);
-
-        //此处要改    判断条件地方
-        String locat= GPSInfoProvider.getInstance(this).getLocation();
+        String locat= GPSInfoProvider.getLngAndLat(this);
         Log.i(TAG,"返回结果为："+locat);
         if("".equals(locat)){
-            String lots[]=locat.split("-");
-            String lat=lots[0];
-            String lon=lots[1];
-            Log.i(TAG,"定位经度为："+lat+"\n"+"纬度为："+lon);
+//            ToastUtil.showToast(this,"获取卫星失败");
         }else{
-//            Toast.makeText(this,"获取卫星失败",Toast.LENGTH_SHORT).show();
-            Point point1=new Point();
-            point1.setX(1.2988176563379282E7);
-            point1.setY(4904376.693592213);
+//            Point point1=new Point();
+//            point1.setX(1.2988176563379282E7);
+//            point1.setY(4904376.693592213);
+//
+//            Point point2=new Point();
+//            point2.setX(1.2925498200185413E7);
+//            point2.setY(4899484.723781959);
+//
+//            Point point3=new Point();
+//            point3.setX(1.2919077489809455E7);
+//            point3.setY(4852705.262471414);
+//
+//            Point point4=new Point();
+//            point4.setX(1.2955461515273213E7);
+//            point4.setY(4793084.380408954);
+//
+//            Point point5=new Point();
+//            point5.setX(1.3037860631764665E7);
+//            point5.setY(4842921.322850907);
+//
+//            Point point6=new Point();
+//            point6.setX(1.2988176563379282E7);
+//            point6.setY(4904376.693592213);
+//
+//            if(points.size()==0){
+//                points.add(point1);
+//            }else  if(points.size()==1){
+//                points.add(point2);
+//            }else  if(points.size()==2){
+//                points.add(point3);
+//            }else  if(points.size()==3){
+//                points.add(point4);
+//            }else  if(points.size()==4){
+//                points.add(point5);
+//            }else  if(points.size()==5){
+//                points.add(point6);
+//            }
 
-            Point point2=new Point();
-            point2.setX(1.2925498200185413E7);
-            point2.setY(4899484.723781959);
+            String lots[]=locat.split(",");
+            Double lat=Double.valueOf(lots[1]);
+            Double lon=Double.valueOf(lots[0 ]);
+            Log.i(TAG,"定位经度为:"+lat+"\n"+"纬度为:"+lon);
+            Point po=new Point();
+            po.setX(Double.valueOf(lat));
+            po.setX(Double.valueOf(lon));
 
-            Point point3=new Point();
-            point3.setX(1.2919077489809455E7);
-            point3.setY(4852705.262471414);
+            Point poi=new Point();
+            poi.setX(Double.valueOf(lat));
+            poi.setY(Double.valueOf(lon));
 
-            Point point4=new Point();
-            point4.setX(1.2955461515273213E7);
-            point4.setY(4793084.380408954);
+//            Point mapPoint = (Point) GeometryEngine.project(poi ,SpatialReference.create(4326),map.getSpatialReference());
+//            Point laopPoint = (Point) GeometryEngine.project(po ,SpatialReference.create(4326),map.getSpatialReference());
+            Point mapPoint = (Point)GeometryEngine.project(lon, lat, map.getSpatialReference());
+            points.add(mapPoint);
 
-            Point point5=new Point();
-            point5.setX(1.3037860631764665E7);
-            point5.setY(4842921.322850907);
+            Log.i(TAG,mapPoint.getX()+mapPoint.getY()+"<----->"+points.size()+"<------");
 
-            Point point6=new Point();
-            point6.setX(1.2988176563379282E7);
-            point6.setY(4904376.693592213);
-
-            if(points.size()==0){
-                points.add(point1);
-            }else  if(points.size()==1){
-                points.add(point2);
-            }else  if(points.size()==2){
-                points.add(point3);
-            }else  if(points.size()==3){
-                points.add(point4);
-            }else  if(points.size()==4){
-                points.add(point5);
-            }else  if(points.size()==5){
-                points.add(point6);
+            if(points.size()>1){
+                range();
             }
             drawLine();
         }
 
 
         //经纬度坐标转投影坐标
-//        Point laopPoint = (Point) GeometryEngine.project(wgsPoint ,SpatialReference.create(4326),map.getSpatialReference());
+//
+    }
+
+    /**
+     * 2点之间距离
+     */
+    public void range(){
+        Line line = new Line();
+        line.setStart(points.get(points.size()-2));
+        line.setEnd(points.get(points.size()-1));
+
+        String length = Double.toString(Math.round(line.calculateLength2D())) + " 米";
+        ToastUtil.showToast(this,"2点距离为："+length);
+        Log.i(TAG,"2点之间距离:"+length);
     }
 
     /**
@@ -531,7 +556,7 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
             for (int i = 1; i < points.size(); i++) {
                 multipath.lineTo(points.get(i));
             }
-            System.out.println("aaaaaaaaaaa==>DrawPolyline: Array coutn = "+points.size());
+            Log.i(TAG,"点的个数为:"+points.size());
             graphic = new Graphic(multipath, new SimpleLineSymbol(Color.RED, 4));
             graphicsLayer.addGraphic(graphic);
 
@@ -539,6 +564,29 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
             graphic = new Graphic(points.get(0), new SimpleMarkerSymbol(Color.BLACK,5, SimpleMarkerSymbol.STYLE.CIRCLE));
             graphicsLayer.addGraphic(graphic);
         }
+    }
+
+    /**
+     * 计算面积
+     */
+    public void  showarea(){
+        Polygon tempPolygon=new Polygon();
+        Point startPoint=null;
+        Point endPoint=null;
+        for(int i=1;i<points.size();i++)
+        {
+            startPoint = points.get(i-1);
+            endPoint = points.get(i);
+
+            Line line1 = new Line();
+            line1.setStart(startPoint);
+            line1.setEnd(endPoint);
+
+            tempPolygon.addSegment(line1, false);
+        }
+        String sArea =RangeUtil.getAreaString(tempPolygon.calculateArea2D());
+       Log.i(TAG,"面积为:"+sArea);
+        ToastUtil.showToast(this,"面积为:"+sArea);
     }
 
     @Override
@@ -554,7 +602,8 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
                     if(points.get(0).getX()!=points.get(points.size()-1).getX()||points.get(0).getY()!=points.get(points.size()-1).getY()){
                         ToastUtil.showToast(this,"位开始位置和结束位置不一致！");
                     }else{
-                        showInputDialog();
+                        showarea();
+//                        showInputDialog();
                     }
                 }
                 break;
@@ -574,3 +623,5 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 }
+
+

@@ -49,4 +49,24 @@
     <string name="lwyin">功率因数:</string>
     <string name="lcharge">电量:</string>
     <string name="ltemp">温度:</string>
+    <string name="qymc">企业名称:</string>
+    <string name="lxr">联系人:</string>
+    <string name="lxdh">联系电话:</string>
+    <string name="dzyj">电子邮件:</string>
+    <string name="xmjs">项目建设</string>
+    <string name="xmmc">项目名称:</string>
+    <string name="tze">投资额:</string>
+    <string name="tdxqmj">土地需求面积:</string>
+    <string name="mu">亩</string>
+    <string name="xmjsnr">项目建设内容:</string>
+    <string name="ssqk">税收情况:</string>
+    <string name="jyqk">就业情况:</string>
+    <string name="yee">营业额:</string>
+    <string name="sqsj">申请时间:</string>
+    <string name="sqqk">申请情况:</string>
+    <string name="shxx">审核信息</string>
+    <string name="shr">审核人:</string>
+    <string name="shsj">审核时间:</string>
+    <string name="sftg">是否通过:</string>
+    <string name="shsm">审核说明:</string>
 </resources>

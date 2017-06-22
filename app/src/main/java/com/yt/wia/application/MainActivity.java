@@ -22,6 +22,7 @@ import com.yt.wia.commons.ThreadToast;
 import com.yt.wia.config.Strings;
 import com.yt.wia.config.SystemSettings;
 import com.yt.wia.config.UpdateBean;
+import com.yt.wia.model.ApplyListBean;
 import com.yt.wia.utils.ProcessUtil;
 import com.yt.zxing.activity.CaptureActivity;
 
@@ -48,7 +49,7 @@ import okhttp3.Response;
 @ContentView(value = R.layout.main)
 public class MainActivity extends BaseActivity implements View.OnClickListener {
     private Button btn01,btn02,btn03,mshape,
-            business,leadgroup,twod,treed,lamp_btn;
+            business,leadgroup,twod,treed,lamp_btn,apply_btn;
     private Context mContext;
     private TextView text_center;
     // 定义一个变量，来标识是否退出
@@ -94,13 +95,14 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         twod= (Button) findViewById(R.id.btn_twod);
         treed= (Button) findViewById(R.id.btn_treed);
         lamp_btn= (Button) findViewById(R.id.lamp_btn);
+        apply_btn= (Button) findViewById(R.id.apply_btn);
+
         business.setOnClickListener(this);
         leadgroup.setOnClickListener(this);
         twod.setOnClickListener(this);
         treed.setOnClickListener(this);
         lamp_btn.setOnClickListener(this);
-
-
+        apply_btn.setOnClickListener(this);
     }
 
     @Override
@@ -176,6 +178,10 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             //路灯
             case R.id.lamp_btn:
                 startActivity(new Intent(MainActivity.this,LampActivity.class));
+                break;
+            //路灯
+            case R.id.apply_btn:
+                startActivity(new Intent(MainActivity.this, ApplyListActivity.class));
                 break;
 //            case R.id.btn_chart:
 //                startActivity(new Intent(MainActivity.this,ChartActivity.class));
