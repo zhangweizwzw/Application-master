@@ -72,6 +72,9 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_two_d);
 
+        String locat= GPSInfoProvider.getLngAndLat(this);
+        Log.i(TAG,"返回结果为aaa："+locat);
+
         initView();
 
         //判断GPS是否开启

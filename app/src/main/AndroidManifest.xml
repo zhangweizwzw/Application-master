@@ -63,7 +63,8 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".TwoDActivity"
-            android:screenOrientation="landscape" />
+            android:screenOrientation="landscape" >
+        </activity>
         <activity
             android:name=".TreeDActivity"
             android:screenOrientation="landscape" />
@@ -130,8 +131,12 @@
         <activity
             android:name=".ApplyActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".ApplyListActivity" />
-        <activity android:name=".ApplyDetailActivity"></activity>
+
+        <activity android:name=".ApplyListActivity"
+            android:screenOrientation="landscape"/>
+
+        <activity android:name=".ApplyDetailActivity"
+            android:screenOrientation="landscape"/>
     </application>
 
 </manifest>

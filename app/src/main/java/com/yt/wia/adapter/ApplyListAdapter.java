@@ -85,7 +85,9 @@ public class ApplyListAdapter extends BaseAdapter {
 		holder.tze = (TextView) convertView.findViewById(R.id.tze);
 		holder.applytime = (TextView) convertView.findViewById(R.id.applytime);
 		holder.sqqk = (TextView) convertView.findViewById(R.id.sqqk);
-		holder.large_lin= (RelativeLayout) convertView.findViewById(R.id.large_lin);
+		holder.update= (Button) convertView.findViewById(R.id.update);
+		holder.chakan= (Button) convertView.findViewById(R.id.chakan);
+
 			convertView.setTag(holder);
 		} else {
 			holder = (OrderViewHolder) convertView.getTag();
@@ -96,7 +98,7 @@ public class ApplyListAdapter extends BaseAdapter {
 		holder.tze.setText(dataList.getTze()+"");
 		holder.applytime.setText(dataList.getEntryTime());
 
-		int review=dataList.getReviewLink();
+		final int review=dataList.getReviewLink();
 		String strRe="";
 		if(review==1){
 			strRe="待审核";
@@ -105,25 +107,40 @@ public class ApplyListAdapter extends BaseAdapter {
 		}
 		holder.sqqk.setText(strRe);
 
+		if(review==99){
+			holder.update.setVisibility(View.INVISIBLE);
+		}
 
-		holder.large_lin.setOnClickListener(new View.OnClickListener() {
+		holder.update.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent intent=new Intent();
 				intent.putExtra("id",dataList.getId());
+				intent.putExtra("xiugai","1");
+				intent.putExtra("shenhe",review);
 				intent.setClass(mcontext, ApplyDetailActivity.class);
 				mcontext.startActivity(intent);
 			}
 		});
 
-
+		holder.chakan.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent intent=new Intent();
+				intent.putExtra("id",dataList.getId());
+				intent.putExtra("xiugai","0");
+				intent.putExtra("shenhe",review);
+				intent.setClass(mcontext, ApplyDetailActivity.class);
+				mcontext.startActivity(intent);
+			}
+		});
 		return convertView;
 	}
 
 
 	public final class OrderViewHolder {
 		private TextView people_name,company_name,project_name,tze,applytime,sqqk;
-		private RelativeLayout large_lin;
+		private Button update,chakan;
 	}
 	
 }

@@ -138,6 +138,7 @@
                             android:layout_margin="5dp"
                             android:layout_marginLeft="5dp"
                             android:paddingLeft="5dp"
+                            android:inputType="phone"
                             android:layout_toRightOf="@+id/phone_tv"
                             android:background="@drawable/edittext" />
 
@@ -269,11 +270,25 @@
                             android:id="@+id/invest_et"
                             android:layout_width="match_parent"
                             android:layout_height="35dp"
-                            android:layout_margin="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
                             android:layout_marginLeft="5dp"
                             android:paddingLeft="5dp"
+                            android:layout_marginRight="50dp"
+                            android:inputType="number"
                             android:layout_toRightOf="@+id/invest_tv"
                             android:background="@drawable/edittext" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_alignParentRight="true"
+                            android:textSize="@dimen/text_size_middle"
+                            android:textColor="@color/text_color_default"
+                            android:text="万元" />
 
                     </RelativeLayout>
                 </LinearLayout>

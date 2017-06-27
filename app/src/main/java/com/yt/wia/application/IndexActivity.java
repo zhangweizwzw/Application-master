@@ -168,13 +168,14 @@ public class IndexActivity extends Activity{
             OkHttpUtils
                     .post()
 //                    .url(SystemSettings.NEWREQUEST_URL+"loginVerify")
-                    .url("http://192.168.1.101:8080/manager/loginVerify")
+                    .url("http://192.168.1.112:8080/manager/loginVerify")
                     .addParams("account",password)
                     .addParams("password", pinCode)
                     .build()
                     .execute(new StringCallback() {
                         @Override
                         public void onError(Call call, Exception e) {
+                            Log.i(TAG,"登录错误返回="+e.toString());
                             ProcessUtil.dismiss();
                             ThreadToast.backThreadLongToast(getApplicationContext(),Strings.Login_Fail);
                         }

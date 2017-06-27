@@ -11,9 +11,10 @@
         layout="@layout/title_bar" />
 
     <ScrollView
+        android:layout_below="@id/title_bar"
+        android:layout_marginTop="5dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/title_bar">
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -622,8 +623,26 @@
 
                     </RelativeLayout>
                 </LinearLayout>
-                <TextView
+                <TextView android:id="@+id/deivder"
                     android:layout_below="@id/five_lin2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"/>
+
+
+                <Button android:id="@+id/update_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="2dp"
+                    android:layout_below="@id/deivder"
+                    android:layout_marginTop="5dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/button_theme"
+                    android:text="@string/xiugai"/>
+
+                <TextView android:id="@+id/deivder2"
+                    android:layout_below="@id/update_btn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="5dp"/>

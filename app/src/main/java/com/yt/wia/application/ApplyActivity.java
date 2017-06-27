@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.yt.wia.model.ApplyBean;
+import com.yt.wia.model.ResultBean;
 import com.yt.wia.utils.ProcessUtil;
 import com.yt.wia.utils.ProvingUtil;
 import com.yt.wia.utils.ToastUtil;
@@ -73,7 +74,7 @@ public class ApplyActivity extends AppCompatActivity implements View.OnClickList
         OkHttpUtils
                 .put()
 //                .url(SystemSettings.NEWREQUEST_URL)
-                .url("http://192.168.1.101:8080/manager/zs/save")
+                .url("http://192.168.1.112:8080/manager/zs/save")
                 .requestBody(body)
                 .build()
                 .execute(new StringCallback() {
@@ -88,20 +89,33 @@ public class ApplyActivity extends AppCompatActivity implements View.OnClickList
                     public void onResponse(String response) {
                         ProcessUtil.dismiss();
                         Log.i(TAG,"提交申请返回："+response);
-
+                        Gson gson=new Gson();
+                        ResultBean rbean=gson.fromJson(response,ResultBean.class);
+                        if(rbean.isResult()){
+                            goback(1);
+                        }else{
+                            ToastUtil.showToast(ApplyActivity.this,"服务器繁忙，请稍后重试！");
+                        }
 
                     }
                 });
     }
 
+    public void goback(int isreflash){
+        Intent intent=new Intent();
+        intent.putExtra("isreflash",isreflash);
+        setResult(1,intent);
+        finish();
+    }
     /**
+     *
      * 点击事件
      */
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.image_left:
-                finish();
+                goback(0);
                 break;
             case R.id.sure:
                 String  str_names=name_et.getText().toString();//项目名称
@@ -123,11 +137,11 @@ public class ApplyActivity extends AppCompatActivity implements View.OnClickList
                     ToastUtil.showToast(this,"请输入联系人");
                 }else if(str_phone.isEmpty()){
                     ToastUtil.showToast(this,"请输入联系电话");
-                }else if(!ProvingUtil.isMobile(str_phone)&&!ProvingUtil.isPhone(str_phone)){
+                }else if(!ProvingUtil.isPhone(str_phone) && !ProvingUtil.isdianhua(str_phone)){
                     ToastUtil.showToast(this,"请输入正确的电话号码");
                 }else if(str_postbox.isEmpty()){
                     ToastUtil.showToast(this,"请输入电子邮件");
-                }else if(!ProvingUtil.emailFormat(str_postbox)){
+                } else if(!ProvingUtil.checkEmail(str_postbox)){
                     ToastUtil.showToast(this,"请输入正确的邮箱");
                 }else if(str_projectname.isEmpty()){
                     ToastUtil.showToast(this,"请输入项目名称");

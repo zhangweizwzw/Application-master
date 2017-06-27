@@ -67,6 +67,7 @@
             android:text="路灯"/>
         <Button android:id="@+id/apply_btn"
             style="@style/MyBtn"
+            android:drawableLeft="@mipmap/apply"
             android:text="申请"/>
         <Button
             style="@style/MyBtn"

@@ -1,136 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/large_lin">
-    <!-- 第一行 -->
-    <LinearLayout android:id="@+id/lin1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/people_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/lxr"/>
+    android:layout_height="match_parent">
 
-            <TextView android:id="@+id/people_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/people_tv"
-                android:textColor="@color/text_color_default"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/company_name_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/qymc"/>
+    <LinearLayout android:id="@+id/caozuo"
+        android:layout_width="70dp"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_height="match_parent">
 
-            <TextView android:id="@+id/company_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:layout_toRightOf="@id/company_name_tv"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/project_name_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/xmmc"/>
+        <Button android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="2dp"
+            android:background="@drawable/button_theme"
+            android:text="@string/xiugai"/>
 
-            <TextView android:id="@+id/project_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:layout_toRightOf="@id/project_name_tv"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
+        <Button android:id="@+id/chakan"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/white"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/button_theme"
+            android:text="@string/chakan"/>
+
     </LinearLayout>
-    <!-- 第二行 -->
-    <LinearLayout android:id="@+id/lin2"
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_below="@id/lin1"
-        android:layout_margin="10dp">
-        <RelativeLayout
-            android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginRight="70dp">
+        <!-- 第一行 -->
+        <LinearLayout
+            android:id="@+id/lin1"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/tze_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/tze"/>
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal">
 
-            <TextView android:id="@+id/tze"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:layout_toRightOf="@id/tze_tv"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/people_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lxr"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/people_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/people_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:id="@+id/company_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/qymc"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/company_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/company_name_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/project_name_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/xmmc"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/project_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/project_name_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+        </LinearLayout>
+        <!-- 第二行 -->
+        <LinearLayout
+            android:id="@+id/lin2"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/applytime_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/sqsj"/>
+            android:layout_below="@id/lin1"
+            android:layout_margin="10dp"
+            android:orientation="horizontal">
 
-            <TextView android:id="@+id/applytime"
-                android:layout_width="wrap_content"
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:layout_toRightOf="@id/applytime_tv"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1">
-            <TextView android:id="@+id/sqqk_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:textSize="@dimen/text_size_middle"
-                android:text="@string/sqqk"/>
+                android:layout_weight="1">
 
-            <TextView android:id="@+id/sqqk"
-                android:layout_width="wrap_content"
+                <TextView
+                    android:id="@+id/tze_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/tze"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/tze"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/tze_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color_default"
-                android:layout_toRightOf="@id/sqqk_tv"
-                android:layout_marginLeft="5dp"
-                android:textSize="@dimen/text_size_middle"/>
-        </RelativeLayout>
-    </LinearLayout>
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:id="@+id/applytime_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sqsj"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/applytime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/applytime_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/sqqk_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sqqk"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+
+                <TextView
+                    android:id="@+id/sqqk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/sqqk_tv"
+                    android:textColor="@color/text_color_default"
+                    android:textSize="@dimen/text_size_large" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
 </RelativeLayout>

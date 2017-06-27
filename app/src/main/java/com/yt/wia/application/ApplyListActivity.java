@@ -29,6 +29,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.jar.Pack200;
 
 import okhttp3.Call;
 import okhttp3.MediaType;
@@ -102,6 +103,7 @@ public class ApplyListActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initDate(int isloading,String projectname,int pageNo) {
+        Log.i(TAG,"PAGENO="+ pageNo);
         final ApplyRequestBean abean=new ApplyRequestBean();
         abean.setSize(size);
         abean.setOrgName(projectname);
@@ -119,7 +121,7 @@ public class ApplyListActivity extends AppCompatActivity implements View.OnClick
         OkHttpUtils
                 .put()
 //                .url(SystemSettings.NEWREQUEST_URL)
-                .url("http://192.168.1.101:8080/manager/zs/findAll")
+                .url("http://192.168.1.112:8080/manager/zs/findAll")
                 .requestBody(body)
                 .build()
                 .execute(new StringCallback() {
@@ -143,6 +145,47 @@ public class ApplyListActivity extends AppCompatActivity implements View.OnClick
                 });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode==1&&resultCode==1){
+        int  code=data.getIntExtra("isreflash",0);
+            if(code==1){
+                handler.sendEmptyMessage(0);
+                project_et.setText("");
+                projectname="";
+            }
+        }
+}
+
+    @Override
+    public void onRefresh() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(0);
+            }
+        }, 1500);
+    }
+
+
+    @Override
+    public void onLoadMore() {
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                handler.sendEmptyMessage(1);
+            }
+        }, 1500);
+    }
+
+    private void onLoad() {
+        apply_lv.stopRefresh();
+        apply_lv.stopLoadMore();
+        Date date=new Date();
+        SimpleDateFormat format=new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+        apply_lv.setRefreshTime(format.format(date));
+    }
 
     /**
      * 点击事件
@@ -159,37 +202,8 @@ public class ApplyListActivity extends AppCompatActivity implements View.OnClick
                 initDate(0,projectname,1);
                 break;
             case R.id.text_right:
-                startActivity(new Intent(this,ApplyActivity.class));
+                startActivityForResult(new Intent(this,ApplyActivity.class),1);
                 break;
         }
-    }
-
-    @Override
-    public void onRefresh() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                handler.sendEmptyMessage(0);
-            }
-        }, 2000);
-    }
-
-
-    @Override
-    public void onLoadMore() {
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                handler.sendEmptyMessage(1);
-            }
-        }, 2000);
-    }
-
-    private void onLoad() {
-        apply_lv.stopRefresh();
-        apply_lv.stopLoadMore();
-        Date date=new Date();
-        SimpleDateFormat format=new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-        apply_lv.setRefreshTime(format.format(date));
     }
 }
