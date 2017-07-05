@@ -42,7 +42,7 @@
     <color name="text">#A1A6AB</color>
     <color name="bk_color">#C2C2C2</color>
     <color name="bantransparent">#e0000000</color><!-- 半透明 -->
-    <color name="themecolor">#3399CC</color><!-- 半透明 -->
+    <color name="themecolor">#3399CC</color>
     <color name="text_color_default">#454E59</color>
     <color name="lmasss_color">#CAE6F4</color>
     <color name="clamp_color">#FBF5D7</color>

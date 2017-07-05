@@ -6,30 +6,29 @@
     android:id="@+id/largerela"
     tools:context="com.yt.wia.application.ChartWebviewActivity">
 
-        <RelativeLayout android:id="@+id/smallrela"
-        android:background="@color/white"
-        android:layout_width="750dp"
-        android:layout_height="500dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
-
-        <com.yt.wia.view.WebViewMod
-            android:id="@+id/webview"
-            android:layout_width="750dp"
-            android:layout_height="500dp" />
-
-        <ImageView android:id="@+id/close"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:src="@mipmap/close"/>
-    </RelativeLayout>
-
     <include android:id="@+id/title_bar"
-        layout="@layout/title_bar"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        layout="@layout/title_bar"/>
+
+        <RelativeLayout android:id="@+id/smallrela"
+            android:background="@color/white"
+            android:layout_width="750dp"
+            android:layout_height="500dp"
+            android:layout_below="@id/title_bar"
+            android:layout_marginTop="10dp"
+            android:layout_centerHorizontal="true">
+
+            <com.yt.wia.view.WebViewMod
+                android:id="@+id/webview"
+                android:layout_width="750dp"
+                android:layout_height="500dp" />
+
+            <ImageView android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/close"/>
+        </RelativeLayout>
+
+
 
 </RelativeLayout>

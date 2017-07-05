@@ -391,7 +391,7 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
     private void contLocation() {
         String locat= GPSInfoProvider.getLngAndLat(this);
         Log.i(TAG,"返回结果为："+locat);
-        if("".equals(locat)){
+     /*   if("".equals(locat)){
 //            ToastUtil.showToast(this,"获取卫星失败");
         }else{
 //            Point point1=new Point();
@@ -455,11 +455,9 @@ public class TwoDActivity extends AppCompatActivity implements View.OnClickListe
                 range();
             }
             drawLine();
-        }
+        } */
 
 
-        //经纬度坐标转投影坐标
-//
     }
 
     /**

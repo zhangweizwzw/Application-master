@@ -50,7 +50,7 @@ public class GPSInfoProvider {
                 longitude = location.getLongitude();
             }
         }
-        return longitude + "," + latitude;
+        return longitude + "gps" + latitude;
     }
 
     //从网络获取经纬度
@@ -68,13 +68,15 @@ public class GPSInfoProvider {
             // for ActivityCompat#requestPermissions for more details.
             return "";
         }
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 1000, 0, locationListener);
+        if (locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)) {
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0,locationListener);
+        }
         Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
         if (location != null) {
             latitude = location.getLatitude();
             longitude = location.getLongitude();
         }
-        return longitude + "," + latitude;
+        return longitude + "net" + latitude;
     }
 
 

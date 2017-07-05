@@ -23,6 +23,7 @@ import com.yt.wia.commons.ThreadToast;
 import com.yt.wia.config.SystemSettings;
 import com.yt.wia.model.FixedFundBean;
 import com.yt.wia.utils.ProcessUtil;
+import com.yt.wia.utils.ToastUtil;
 import com.yt.wia.view.BarChartItem;
 import com.yt.wia.view.ChartItem;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -109,16 +110,17 @@ public class FixedFundActivity extends AppCompatActivity implements View.OnClick
             @Override
             public void onClick(View v) {
                 //判断开始时间和结束时间
-                int a=Integer.parseInt(sbegin);
-                int b=Integer.parseInt(send);
-                if (a<b){
-                    initData(sbegin,send);
-                }else {
-                    Toast.makeText(FixedFundActivity.this,"开始年份需小于结束年份",Toast.LENGTH_SHORT).show();
+                if(sbegin.equals("")||send.equals("")){
+                    ToastUtil.showToast(FixedFundActivity.this,"开始年份或结束年份不能为空！");
+                }else{
+                    int a=Integer.parseInt(sbegin);
+                    int b=Integer.parseInt(send);
+                    if (a<b){
+                        initData(sbegin,send);
+                    }else {
+                        Toast.makeText(FixedFundActivity.this,"开始年份需小于结束年份",Toast.LENGTH_SHORT).show();
+                    }
                 }
-
-
-
             }
         });
     }

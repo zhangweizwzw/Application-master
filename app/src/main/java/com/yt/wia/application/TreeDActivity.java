@@ -6,10 +6,12 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.yt.wia.utils.SdcardUtil;
+
 import org.xwalk.core.XWalkPreferences;
 import org.xwalk.core.XWalkView;
 
-public class TreeDActivity extends AppCompatActivity implements View.OnClickListener {
+public class  TreeDActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView text_center;
     private ImageView image_left;
     private XWalkView xwalk;
@@ -34,8 +36,8 @@ public class TreeDActivity extends AppCompatActivity implements View.OnClickList
         // enable multiple windows.
         XWalkPreferences.setValue(XWalkPreferences.SUPPORT_MULTIPLE_WINDOWS, true);
 
-//        xwalk.load("https://baidu.com",null);
-        xwalk.load("file:///android_asset/load_remote.html",null);
+        String shpPath = SdcardUtil.getSDPath() + "/load_remote.html";
+        xwalk.load(shpPath,null);
     }
 
     private void initView() {

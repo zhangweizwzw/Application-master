@@ -24,7 +24,7 @@ public class SystemSettings {
 //    public static String NEWREQUEST_URL="http://192.168.1.132:8080/manager/";//耿星
 
 
-    public static String LAMP_URL="http://192.168.1.103:8080/manager/lamp/";
+    public static String LAMP_URL="http://192.168.1.103:8080/lamp/";
 //    public static String CHECKISCONNECT="http://192.168.1.103:8080";//检查是否连接服务器
     public static String NEWREQUEST_URL="http://192.168.1.103:8080/";//103服务器
 //    public static String UPLOADREQUEST_URL="http://192.168.1.103:8080/";//上传经纬度
